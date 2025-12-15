@@ -1,12 +1,12 @@
 import React from 'react';
 import { sharedStyles } from '../../utils/constants';
-import Button from '../../components/ui/Button';
+import { Button } from '../../components/ui/Button';
 import Wordmark from '../../components/ui/Wordmark';
 
 interface Partner {
   id: string;
   name: string;
-  tier: 'Title' | 'Gold' | 'Silver' | 'Bronze' | 'In-kind'; 
+  tier: 'Title' | 'Gold' | 'Silver' | 'Bronze' | 'In-kind';
   logo_url: string;
   isActive?: boolean;
 }
@@ -73,17 +73,17 @@ const PartnersPage: React.FC<PartnersPageProps> = ({ partners = [] }) => {
   };
 
   return (
-    <main className={sharedStyles.layout.main}>
+    <div className={sharedStyles.layout.main}>
       {/* Hero */}
       <section className={sharedStyles.layout.heroSection}>
         <div className={sharedStyles.layout.heroContainer}>
           <div className={sharedStyles.layout.heroGrid}>
             <div>
-                <h1 className={`${sharedStyles.typography.heroTitle} mb-4`}>
-                  <Wordmark event="UOK" />
-                </h1>
-                <h2 className={`${sharedStyles.typography.heroTitle} ${sharedStyles.colors.white}`}>Partners</h2>
-              </div>
+              <h1 className={`${sharedStyles.typography.heroTitle} mb-4`}>
+                <Wordmark event="UOK" />
+              </h1>
+              <h2 className={`${sharedStyles.typography.heroTitle} ${sharedStyles.colors.white}`}>Partners</h2>
+            </div>
             <div className="flex items-center justify-start lg:justify-end">
               <p className={`${sharedStyles.typography.description} max-w-md lg:text-right`}>
                 Tiered showcases and equal spotlight for every collaborator.
@@ -92,9 +92,9 @@ const PartnersPage: React.FC<PartnersPageProps> = ({ partners = [] }) => {
           </div>
         </div>
       </section>
-      
+
       <div className={sharedStyles.layout.divider} />
-      
+
       {/* Partners Grid */}
       <section className={sharedStyles.layout.contentSection}>
         <div className="max-w-7xl mx-auto">
@@ -107,18 +107,18 @@ const PartnersPage: React.FC<PartnersPageProps> = ({ partners = [] }) => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA */}
       <section className="py-20 px-6 bg-black">
         <div className="max-w-7xl mx-auto text-center">
           <p className={`${sharedStyles.typography.trackLabel} mb-4`}>More partners to be announced</p>
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8`}>
-            Join us at <span className={sharedStyles.colors.tedxRed}>TEDx</span>UOK 2026
+            Join us at <span className={`${sharedStyles.colors.tedxRed} inline-flex items-baseline`}><span className="relative inline-block"><span>TED</span><span className="absolute top-[-20%]">x</span><span className="opacity-0">x</span></span></span>UOK 2026
           </h2>
-          <Button className="px-10 py-4" variant="primary">Register Now</Button>
+          <Button className="px-10 py-4" variant="tedxPrimary">Register Now</Button>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

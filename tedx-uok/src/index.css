@@ -38,15 +38,19 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* Brand colors */
+  /* Brand colors (Strict) */
   --tedx-red: #EB0028;
   --black: #000000;
   --white: #FFFFFF;
 
-  color-scheme: light dark;
-  color: var(--white);
+  /* Semantic Colors */
+  --background: var(--black);
+  --foreground: var(--white);
+  --card-bg: #0E0E0E;
+  --card-border: #1F1F1F;
 
-  /* Preferred base background is solid black per brand guide */
+  color-scheme: dark;
+  color: var(--white);
   background-color: var(--black);
 
   font-synthesis: none;
@@ -59,7 +63,9 @@ a {
   font-weight: 500;
   color: var(--white);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
+
 a:hover {
   color: var(--tedx-red);
 }
@@ -70,39 +76,94 @@ body {
   min-height: 100vh;
   background-color: var(--black);
   color: var(--white);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
 }
 
 /* Button base and variants according to TEDx guide */
-button { font-family: inherit; cursor: pointer; }
-.btn { display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; padding:0.6rem 1rem; font-weight:600; border-radius:9999px; }
-.btn-primary { background:var(--tedx-red); color:var(--white); border: none; }
-.btn-primary:hover, .btn-primary:focus { background:#cf001f; }
-.btn-secondary { background:transparent; color:var(--tedx-red); border:1px solid var(--tedx-red); }
-.btn-secondary:hover, .btn-secondary:focus { background: rgba(235,0,40,0.04); }
-button:focus, button:focus-visible { outline: 3px solid rgba(235,0,40,0.12); outline-offset: 2px; }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #000000;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: var(--tedx-red);
-  }
-  button {
-    background-color: transparent;
-  }
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--tedx-red);
+  color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #cf001f;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--tedx-red);
+  border: 1px solid var(--tedx-red);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: rgba(235, 0, 40, 0.1);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--tedx-red);
+  outline-offset: 2px;
+}
+
+/* Light mode overrides REMOVED to enforce Dark Editorial Minimalism */
 
 /* Core card style used across site per brand guide */
 .card-core {
   background-color: #0E0E0E;
   border: 1px solid #1F1F1F;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Page transition: fade + translate (used on route changes) */
+.page-transition {
+  animation: fadeInUp 360ms ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

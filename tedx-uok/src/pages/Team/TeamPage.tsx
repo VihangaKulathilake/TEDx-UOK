@@ -70,7 +70,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ teamMembers = [] }) => {
   );
 
   return (
-    <main className={sharedStyles.layout.main}>
+    <div className={sharedStyles.layout.main}>
       {/* Hero */}
       <section className={sharedStyles.layout.heroSection}>
         <div className={sharedStyles.layout.heroContainer}>
@@ -83,15 +83,15 @@ const TeamPage: React.FC<TeamPageProps> = ({ teamMembers = [] }) => {
             </div>
             <div className="flex items-center justify-start lg:justify-end">
               <p className={`${sharedStyles.typography.description} max-w-md lg:text-right`}>
-                Meet the licensee, executive committee, and directors who shape TEDxUOK.
+                Meet the licensee, executive committee, and directors who shape <span className="font-extrabold"><span className="relative inline-block"><span>TED</span><span className="absolute top-[-20%]">x</span><span className="opacity-0">x</span></span>UOK</span>.
               </p>
             </div>
           </div>
         </div>
       </section>
-      
+
       <div className={sharedStyles.layout.divider} />
-      
+
       {/* Team Sections */}
       <section className={sharedStyles.layout.contentSection}>
         <div className="max-w-7xl mx-auto space-y-24">
@@ -100,7 +100,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ teamMembers = [] }) => {
           {directors.length > 0 && renderTeamSection('Directors', directors, 'TEAM 03')}
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

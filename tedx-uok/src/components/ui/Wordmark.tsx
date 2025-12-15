@@ -5,9 +5,13 @@ interface WordmarkProps {
 
 export default function Wordmark({ event = 'UOK', className = '' }: WordmarkProps) {
   return (
-    <div className={`inline-flex items-baseline gap-2 ${className}`}>
-      <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#EB0028] leading-none">TEDx</span>
-      <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-none">{event}</span>
+    <div className={`font-extrabold leading-none inline-flex items-baseline ${className}`}>
+      <span className="relative inline-block text-[#EB0028]">
+        <span>TED</span>
+        <span className="absolute top-[-20%]">x</span>
+        <span className="opacity-0">x</span>
+      </span>
+      <span className="text-white">{event}</span>
     </div>
   );
 }
