@@ -79,9 +79,9 @@ const PartnersPage: React.FC<PartnersPageProps> = ({ partners = [] }) => {
             <div>
               <h1 className={`${sharedStyles.typography.heroTitle} mb-4`}>
                 <span className={sharedStyles.colors.tedxRed}>TEDx</span>
-                <span className={sharedStyles.colors.black}>UOK</span>
+                <span className={sharedStyles.colors.white}>UOK</span>
               </h1>
-              <h2 className={`${sharedStyles.typography.heroTitle} ${sharedStyles.colors.black}`}>Partners</h2>
+              <h2 className={`${sharedStyles.typography.heroTitle} ${sharedStyles.colors.white}`}>Partners</h2>
             </div>
             <div className="flex items-center justify-start lg:justify-end">
               <p className={`${sharedStyles.typography.description} max-w-md lg:text-right`}>
@@ -108,13 +108,13 @@ const PartnersPage: React.FC<PartnersPageProps> = ({ partners = [] }) => {
       </section>
       
       {/* CTA */}
-      <section className={`py-20 px-6 ${sharedStyles.colors.bgCream}`}>
+      <section className="py-20 px-6 bg-black">
         <div className="max-w-7xl mx-auto text-center">
-          <p className={`${sharedStyles.typography.trackLabel} ${sharedStyles.colors.gray400} mb-4`}>More partners to be announced</p>
-          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold ${sharedStyles.colors.black} mb-8`}>
+          <p className={`${sharedStyles.typography.trackLabel} mb-4`}>More partners to be announced</p>
+          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8`}>
             Join us at <span className={sharedStyles.colors.tedxRed}>TEDx</span>UOK 2026
           </h2>
-          <button className="bg-black text-white px-10 py-4 font-medium hover:bg-gray-800 transition-colors duration-300">
+          <button className="btn btn-primary px-10 py-4">
             Register Now
           </button>
         </div>

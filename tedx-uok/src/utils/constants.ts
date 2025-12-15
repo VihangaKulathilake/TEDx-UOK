@@ -2,33 +2,29 @@
 export const sharedStyles = {
 	// Card styles
 	card: {
-		base: 'group bg-white border border-gray-100 overflow-hidden',
-		imageContainer: 'aspect-[3/4] overflow-hidden bg-[#e8e2dc]',
+		base: 'group card-core overflow-hidden',
+		imageContainer: 'aspect-[3/4] overflow-hidden bg-[#0E0E0E]',
 		content: 'p-6',
 	},
 	// Typography
 	typography: {
 		heroTitle: 'text-6xl md:text-7xl lg:text-8xl font-bold leading-tight',
-		sectionTitle: 'text-4xl md:text-5xl font-bold text-black',
-		cardTitle: 'font-bold text-black text-lg',
-		cardSubtitle: 'text-base text-gray-600',
-		cardAccent: 'text-base text-[#a68968]',
-		trackLabel: 'text-xs uppercase tracking-wider text-gray-400',
-		description: 'text-xl md:text-2xl text-gray-600',
+		sectionTitle: 'text-4xl md:text-5xl font-bold text-white',
+		cardTitle: 'font-bold text-white text-lg',
+		cardSubtitle: 'text-base text-white/80',
+		cardAccent: 'text-base text-white/70',
+		trackLabel: 'text-xs uppercase text-white/60',
+		description: 'text-xl md:text-2xl text-white/80',
 	},
 	// Colors
 	colors: {
-		tedxRed: 'text-red-600',
+		tedxRed: 'text-[#EB0028]',
 		black: 'text-black',
-		gray600: 'text-gray-600',
-		gray400: 'text-gray-400',
-		tan: 'text-[#a68968]',
-		bgBeige: 'bg-[#e8e2dc]',
-		bgCream: 'bg-[#f5f1ed]',
+		white: 'text-white',
 	},
 	// Layout
 	layout: {
-		main: 'min-h-screen bg-white',
+		main: 'min-h-screen bg-black',
 		heroSection: 'pt-20 pb-16 px-6',
 		heroContainer: 'max-w-7xl mx-auto',
 		heroGrid: 'grid grid-cols-1 lg:grid-cols-2 gap-8 items-center',

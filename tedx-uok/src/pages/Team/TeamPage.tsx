@@ -77,9 +77,9 @@ const TeamPage: React.FC<TeamPageProps> = ({ teamMembers = [] }) => {
             <div>
               <h1 className={`${sharedStyles.typography.heroTitle} mb-4`}>
                 <span className={sharedStyles.colors.tedxRed}>TEDx</span>
-                <span className={sharedStyles.colors.black}>UOK</span>
+                <span className={sharedStyles.colors.white}>UOK</span>
               </h1>
-              <h2 className={`${sharedStyles.typography.heroTitle} ${sharedStyles.colors.black}`}>Team</h2>
+              <h2 className={`${sharedStyles.typography.heroTitle} ${sharedStyles.colors.white}`}>Team</h2>
             </div>
             <div className="flex items-center justify-start lg:justify-end">
               <p className={`${sharedStyles.typography.description} max-w-md lg:text-right`}>
