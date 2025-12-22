@@ -5,8 +5,8 @@ export const VolunteerApplicationPage:  React.FC = () => {
   // Set body background to black when component mounts
   React.useEffect(() => {
     document.body.style.backgroundColor = '#000000';
-    document. body.style.margin = '0';
-    document.body.style. padding = '0';
+    document.body. style.margin = '0';
+    document. body.style.padding = '0';
     document. documentElement.style.backgroundColor = '#000000';
     
     return () => {
@@ -23,13 +23,13 @@ export const VolunteerApplicationPage:  React.FC = () => {
       icon: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <polyline points="3. 27 6.96 12 12.01 20.73 6.96"/>
           <line x1="12" y1="22.08" x2="12" y2="12"/>
         </svg>
       ),
     },
     {
-      title:  'Marketing & Social Media',
+      title: 'Marketing & Social Media',
       description: 'Create engaging content, manage social platforms, and promote the event.',
       icon: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -66,7 +66,7 @@ export const VolunteerApplicationPage:  React.FC = () => {
       ),
     },
     {
-      title: 'Content Creation',
+      title:  'Content Creation',
       description: 'Write articles, design graphics, and produce promotional materials.',
       icon: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -108,7 +108,7 @@ export const VolunteerApplicationPage:  React.FC = () => {
     {
       period: 'Post-Event',
       duration: '2-3 hours',
-      description: 'Wrap-up meetings, feedback sessions, and documentation.',
+      description:  'Wrap-up meetings, feedback sessions, and documentation.',
     },
   ];
 
@@ -136,7 +136,7 @@ export const VolunteerApplicationPage:  React.FC = () => {
       ),
     },
     {
-      title: 'Networking',
+      title:  'Networking',
       description: 'Connect with speakers, organizers, and like-minded individuals.',
       icon: (
         <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -157,7 +157,7 @@ export const VolunteerApplicationPage:  React.FC = () => {
       ),
     },
     {
-      title: 'Certificate',
+      title:  'Certificate',
       description: 'Receive an official TEDx volunteer certificate upon completion.',
       icon: (
         <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -205,7 +205,7 @@ export const VolunteerApplicationPage:  React.FC = () => {
         body, html, #root {
           background-color: #000000 !important;
           margin: 0 !important;
-          padding: 0 !important;
+          padding: 0 ! important;
         }
         * {
           letter-spacing: 0 !important;
@@ -229,14 +229,14 @@ export const VolunteerApplicationPage:  React.FC = () => {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-16" style={{ letterSpacing: '0' }}>
                 <span style={{ color: '#FFFFFF' }}>Volunteer with </span><span style={{ color: '#EB0028' }}>TED<sup style={{ color: '#EB0028' }}>x</sup></span> <span style={{ color: '#FFFFFF' }}>UoK</span>
               </h1>
-              <p className="text-gray-300 text-lg sm: text-xl mb-12 max-w-3xl mx-auto leading-relaxed" style={{ letterSpacing: '0' }}>
+              <p className="text-gray-300 text-lg sm:text-xl mb-12 max-w-3xl mx-auto leading-relaxed" style={{ letterSpacing: '0' }}>
                 Join our passionate team and help create an unforgettable experience.  
                 Make an impact, build connections, and grow your skills. 
               </p>
               <Link
                 to="/volunteer/register"
                 className="inline-block bg-[#EB0028] px-10 py-4 rounded-lg text-lg font-bold hover:bg-[#c7001f] transition-all shadow-lg hover:shadow-xl"
-                style={{ color: '#FFFFFF', letterSpacing: '0' }}
+                style={{ color:  '#FFFFFF', letterSpacing:  '0' }}
               >
                 Apply Now
               </Link>
@@ -334,7 +334,7 @@ export const VolunteerApplicationPage:  React.FC = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {benefits.map((benefit, index) => (
+                {benefits. map((benefit, index) => (
                   <div
                     key={index}
                     className="bg-[#0E0E0E] border border-[#1F1F1F] rounded-xl p-6 text-center hover:border-[#EB0028] transition-all"
@@ -365,7 +365,7 @@ export const VolunteerApplicationPage:  React.FC = () => {
                 Apply to Volunteer
               </Link>
               <p className="text-gray-500 text-sm mt-8" style={{ letterSpacing: '0' }}>
-                Questions?  <Link to="/contact" style={{ color: '#EB0028', textDecoration:  'none', letterSpacing: '0' }} onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}>Contact us</Link>
+                Questions?  <Link to="/contact" style={{ color: '#EB0028', textDecoration: 'none', letterSpacing: '0' }} onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}>Contact us</Link>
               </p>
             </div>
           </section>

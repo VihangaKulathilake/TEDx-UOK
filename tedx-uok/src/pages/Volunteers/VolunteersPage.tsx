@@ -52,7 +52,7 @@ const FormInput = ({
       <label 
         htmlFor={name} 
         className="block text-sm font-medium text-gray-300"
-        style={{ letterSpacing: '0', textAlign: 'left' }}
+        style={{ letterSpacing:  '0', textAlign: 'left' }}
       >
         {label} {required && <span className="text-[#EB0028]">*</span>}
       </label>
@@ -99,15 +99,15 @@ const FormTextarea = ({
 }: {
   label: string;
   name: string;
-  value:  string;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  value: string;
+  onChange: (e:  React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
-  error?: string;
+  error?:  string;
   required?: boolean;
   rows?: number;
 }) => {
   const [isFocused, setIsFocused] = React.useState(false);
-  const [isHovered, setIsHovered] = React.useState(false);
+  const [isHovered, setIsHovered] = React. useState(false);
 
   const getBorderColor = () => {
     if (error) return '#EB0028';
@@ -231,7 +231,7 @@ const FormSelect = ({
 
 const VolunteersPage: React.FC = () => {
   const [formData, setFormData] = React.useState<FormData>({
-    full_name: '',
+    full_name:  '',
     email: '',
     phone: '',
     university: '',
@@ -239,7 +239,7 @@ const VolunteersPage: React.FC = () => {
     year_of_study: '',
     preferred_role: '',
     availability: '',
-    previous_experience: '',
+    previous_experience:  '',
     skills: '',
     motivation: '',
     cv_url: '',
@@ -247,7 +247,7 @@ const VolunteersPage: React.FC = () => {
 
   const [errors, setErrors] = React.useState<FormErrors>({});
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
-  const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
+  const [selectedFile, setSelectedFile] = React. useState<File | null>(null);
 
   React.useEffect(() => {
     document.body.style.backgroundColor = '#000000';
@@ -272,7 +272,7 @@ const VolunteersPage: React.FC = () => {
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
+    if (e.target. files && e.target.files[0]) {
       const file = e.target.files[0];
       const maxSize = 5 * 1024 * 1024;
       
@@ -293,16 +293,16 @@ const VolunteersPage: React.FC = () => {
     if (!formData.full_name.trim()) newErrors.full_name = 'Full name is required';
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/. test(formData.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(formData. email)) {
       newErrors.email = 'Email is invalid';
     }
     if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    if (! formData.university.trim()) newErrors.university = 'University is required';
+    if (!formData.university.trim()) newErrors.university = 'University is required';
     if (!formData.faculty.trim()) newErrors.faculty = 'Faculty is required';
-    if (!formData.year_of_study) newErrors.year_of_study = 'Year of study is required';
+    if (!formData. year_of_study) newErrors.year_of_study = 'Year of study is required';
     if (!formData. preferred_role) newErrors.preferred_role = 'Preferred role is required';
     if (!formData.availability) newErrors.availability = 'Availability is required';
-    if (!formData.motivation. trim()) newErrors.motivation = 'Motivation is required';
+    if (! formData.motivation.trim()) newErrors.motivation = 'Motivation is required';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -364,11 +364,11 @@ const VolunteersPage: React.FC = () => {
       <style>{`
         body, html, #root {
           background-color: #000000 !important;
-          margin: 0 ! important;
+          margin: 0 !important;
           padding: 0 !important;
         }
-        ::placeholder {
-          color:  #6B7280;
+        :: placeholder {
+          color: #6B7280;
           opacity: 1;
         }
         * {
@@ -418,7 +418,7 @@ const VolunteersPage: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
                   </svg>
                   <div>
-                    <h3 className="text-white font-bold" style={{ letterSpacing:  '0' }}>Submission Failed</h3>
+                    <h3 className="text-white font-bold" style={{ letterSpacing: '0' }}>Submission Failed</h3>
                     <p className="text-gray-400 text-sm" style={{ letterSpacing: '0' }}>Please check the form and try again.</p>
                   </div>
                 </div>

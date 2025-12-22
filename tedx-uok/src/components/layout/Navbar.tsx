@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { Button } from '../ui/Button';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { Button } from "../ui/Button";
+import { ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -9,20 +9,20 @@ export default function Navbar() {
   const location = useLocation();
 
   const links = [
-    { to: '/', label: 'Home' },
+    { to: "/", label: "Home" },
     {
-      label: 'About',
+      label: "About",
       // Parent is not a link itself, but a trigger
       subItems: [
-        { to: '/about#ted', label: 'TED' },
-        { to: '/about#tedx', label: 'TEDx' },
-        { to: '/about#tedxuok', label: 'TEDxUOK' },
-      ]
+        { to: "/about#ted", label: "TED" },
+        { to: "/about#tedx", label: "TEDx" },
+        { to: "/about#tedxuok", label: "TEDxUOK" },
+      ],
     },
-    { to: '/speakers', label: 'Speakers' },
-    { to: '/team', label: 'Team' },
-    { to: '/partners', label: 'Partners' },
-    { to: '/contact', label: 'Contact' },
+    { to: "/speakers", label: "Speakers" },
+    { to: "/team", label: "Team" },
+    { to: "/partners", label: "Partners" },
+    { to: "/contact", label: "Contact" },
   ];
 
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -30,12 +30,12 @@ export default function Navbar() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === "Escape") setOpen(false);
     };
-    document.addEventListener('keydown', onKey);
+    document.addEventListener("keydown", onKey);
     // move focus to close button when menu opens
     closeBtnRef.current?.focus();
-    return () => document.removeEventListener('keydown', onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
   // Close dropdwon on route change
@@ -43,16 +43,18 @@ export default function Navbar() {
     setActiveDropdown(null);
   }, [location.pathname, location.hash]);
 
-
   return (
-    <header className="w-full sticky top-0 z-50 bg-black text-white border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-black text-white border-b border-white/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-1 font-extrabold text-lg tracking-tight">
+            <a
+              href="/"
+              className="flex items-center gap-1 font-extrabold text-lg tracking-tight"
+            >
               <span className="relative inline-block text-[var(--tedx-red)]">
-                <span>TED</span>
-                <span className="absolute top-[-20%]">x</span>
+                <span className="text-primary">TED</span>
+                <span className="text-primary absolute top-[-10%] ">x</span>
                 <span className="opacity-0">x</span>
               </span>
               <span className="text-white">UOK</span>
@@ -72,29 +74,39 @@ export default function Navbar() {
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <button
-                      className={`flex items-center gap-1 text-white hover:text-red-400 font-medium ${activeDropdown === l.label ? 'text-red-400' : ''}`}
+                      className={`flex items-center gap-1 text-white hover:text-red-400 font-medium ${
+                        activeDropdown === l.label ? "text-red-400" : ""
+                      }`}
                     >
                       {l.label}
                       <ChevronDown className="w-4 h-4" />
                     </button>
                     {/* Dropdown Menu */}
-                    <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 w-48 ${activeDropdown === l.label ? 'block' : 'hidden'}`}>
+                    <div
+                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 w-48 ${
+                        activeDropdown === l.label ? "block" : "hidden"
+                      }`}
+                    >
                       <div className="bg-[#0E0E0E] border border-[#1F1F1F] rounded-lg shadow-xl overflow-hidden py-2">
                         {l.subItems.map((sub) => (
                           <NavLink
                             key={sub.to}
                             to={sub.to}
-                            className={({ isActive }) => `block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/5 ${isActive ? 'text-white bg-white/5' : ''}`}
+                            className={({ isActive }) =>
+                              `block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/5 ${
+                                isActive ? "text-white bg-white/5" : ""
+                              }`
+                            }
                           >
-                            {sub.label === 'TED' ? (
+                            {sub.label === "TED" ? (
                               <span className="font-extrabold">TED</span>
-                            ) : sub.label === 'TEDx' ? (
+                            ) : sub.label === "TEDx" ? (
                               <span className="relative inline-block font-extrabold">
                                 <span>TED</span>
                                 <span className="absolute top-[-20%]">x</span>
                                 <span className="opacity-0">x</span>
                               </span>
-                            ) : sub.label === 'TEDxUOK' ? (
+                            ) : sub.label === "TEDxUOK" ? (
                               <span className="font-extrabold">
                                 <span className="relative inline-block">
                                   <span>TED</span>
@@ -117,7 +129,11 @@ export default function Navbar() {
                 <NavLink
                   key={l.to}
                   to={l.to!}
-                  className={({ isActive }) => `text-white hover:text-red-400 font-medium ${isActive ? 'text-red-500' : ''}`}
+                  className={({ isActive }) =>
+                    `text-white hover:text-red-400 font-medium ${
+                      isActive ? "text-red-500" : ""
+                    }`
+                  }
                 >
                   {l.label}
                 </NavLink>
@@ -140,8 +156,20 @@ export default function Navbar() {
               onClick={() => setOpen(true)}
               className="p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white"
             >
-              <svg aria-hidden="true" className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                aria-hidden="true"
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
@@ -150,21 +178,37 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden fixed inset-y-0 left-0 w-64 bg-black text-white transform transition-transform duration-300 ease-in-out z-50 ${open ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`md:hidden fixed inset-y-0 left-0 w-64 bg-black text-white transform transition-transform duration-300 ease-in-out z-50 ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
         role="dialog"
         aria-modal="true"
         aria-labelledby="mobile-menu-title"
       >
         <div className="px-4 py-4 flex items-center justify-between">
-          <div id="mobile-menu-title" className="text-lg font-bold">Menu</div>
+          <div id="mobile-menu-title" className="text-lg font-bold">
+            Menu
+          </div>
           <button
             aria-label="Close menu"
             ref={closeBtnRef}
             onClick={() => setOpen(false)}
             className="p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white"
           >
-            <svg aria-hidden="true" className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              aria-hidden="true"
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -176,11 +220,19 @@ export default function Navbar() {
                 return (
                   <li key={l.label}>
                     <button
-                      onClick={() => setActiveDropdown(activeDropdown === l.label ? null : l.label)}
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === l.label ? null : l.label
+                        )
+                      }
                       className="flex items-center justify-between w-full px-3 py-2 rounded text-white hover:bg-white/5"
                     >
                       {l.label}
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === l.label ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${
+                          activeDropdown === l.label ? "rotate-180" : ""
+                        }`}
+                      />
                     </button>
                     {activeDropdown === l.label && (
                       <ul className="pl-4 mt-1 space-y-1 border-l border-white/10 ml-3">
@@ -189,21 +241,27 @@ export default function Navbar() {
                             <NavLink
                               to={sub.to}
                               onClick={() => setOpen(false)}
-                              className={({ isActive }) => `block px-3 py-2 rounded text-sm text-white/80 ${isActive ? 'text-white' : 'hover:text-red-400'}`}
+                              className={({ isActive }) =>
+                                `block px-3 py-2 rounded text-sm text-white/80 ${
+                                  isActive ? "text-white" : "hover:text-red-400"
+                                }`
+                              }
                             >
-                              {sub.label === 'TED' ? (
+                              {sub.label === "TED" ? (
                                 <span className="font-extrabold">TED</span>
-                              ) : sub.label === 'TEDx' ? (
+                              ) : sub.label === "TEDx" ? (
                                 <span className="relative inline-block font-extrabold">
                                   <span>TED</span>
                                   <span className="absolute top-[-20%]">x</span>
                                   <span className="opacity-0">x</span>
                                 </span>
-                              ) : sub.label === 'TEDxUOK' ? (
+                              ) : sub.label === "TEDxUOK" ? (
                                 <span className="font-extrabold">
                                   <span className="relative inline-block">
                                     <span>TED</span>
-                                    <span className="absolute top-[-20%]">x</span>
+                                    <span className="absolute top-[-20%]">
+                                      x
+                                    </span>
                                     <span className="opacity-0">x</span>
                                   </span>
                                   <span>UOK</span>
@@ -225,7 +283,13 @@ export default function Navbar() {
                   <NavLink
                     to={l.to!}
                     onClick={() => setOpen(false)}
-                    className={({ isActive }) => `block px-3 py-2 rounded text-white ${isActive ? 'underline decoration-red-600' : 'hover:text-red-400'}`}
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded text-white ${
+                        isActive
+                          ? "underline decoration-red-600"
+                          : "hover:text-red-400"
+                      }`
+                    }
                   >
                     {l.label}
                   </NavLink>
@@ -233,7 +297,12 @@ export default function Navbar() {
               );
             })}
             <li>
-              <Button variant="tedxPrimary" className="w-full mt-4 justify-center" onClick={() => setOpen(false)} asChild>
+              <Button
+                variant="tedxPrimary"
+                className="w-full mt-4 justify-center"
+                onClick={() => setOpen(false)}
+                asChild
+              >
                 <NavLink to="/register">Register Now</NavLink>
               </Button>
             </li>
@@ -252,4 +321,3 @@ export default function Navbar() {
     </header>
   );
 }
-

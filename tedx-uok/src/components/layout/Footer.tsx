@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 
 const footerLinks = {
   quickLinks: [
     { name: "Speakers", href: "/speakers" },
+    { name: "FAQ", href: "/faq" },
     { name: "Agenda", href: "/#agenda" },
     { name: "Venue", href: "/contact" },
     { name: "Team", href: "/team" },
@@ -16,15 +17,19 @@ const footerLinks = {
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
-    { name: "TEDx Rules", href: "https://www.ted.com/about/our-organization/our-policies-terms/tedx-rules", external: true },
+    {
+      name: "TEDx Rules",
+      href: "https://www.ted.com/about/our-organization/our-policies-terms/tedx-rules",
+      external: true,
+    },
   ],
 };
 
 const socials = [
-  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://x.com', label: 'X (Twitter)' },
+  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com", label: "X (Twitter)" },
 ];
 
 export default function Footer() {
@@ -32,20 +37,24 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-black text-white border-t border-white/10 mt-auto">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1 flex flex-col items-start space-y-6">
-            <Link to="/" className="inline-flex items-center gap-1 font-extrabold text-2xl tracking-tight">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1 font-extrabold text-2xl tracking-tight"
+            >
               <span className="relative inline-block text-[#EB0028]">
                 <span>TED</span>
-                <span className="absolute top-[-20%]">x</span>
+                <span className="absolute top-[-10%]">x</span>
                 <span className="opacity-0">x</span>
               </span>
               <span className="text-white">UOK</span>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed text-left">
-              Ideas worth spreading. An independently organized TEDx event at the University of Kelaniya.
+              Ideas worth spreading. An independently organized TEDx event at
+              the University of Kelaniya.
             </p>
             <div className="flex space-x-4">
               {socials.map((social) => (
@@ -135,13 +144,28 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col items-center text-center gap-2">
           <p className="text-sm text-white/50">
-            © {currentYear} <span className="font-extrabold"><span className="relative inline-block"><span>TED</span><span className="absolute top-[-20%]">x</span><span className="opacity-0">x</span></span>UOK</span>.
+            © {currentYear}{" "}
+            <span className="font-extrabold">
+              <span className="relative inline-block">
+                <span>TED</span>
+                <span className="absolute top-[-20%]">x</span>
+                <span className="opacity-0">x</span>
+              </span>
+              UOK
+            </span>
+            .
           </p>
           <p className="text-sm text-white/50">
-            This independent <span className="relative inline-block font-extrabold"><span>TED</span><span className="absolute top-[-20%]">x</span><span className="opacity-0">x</span></span> event is operated under license from TED.
+            This independent{" "}
+            <span className="relative inline-block font-extrabold">
+              <span>TED</span>
+              <span className="absolute top-[-10%]">x</span>
+              <span className="opacity-0">x</span>
+            </span>{" "}
+            event is operated under license from TED.
           </p>
         </div>
       </div>
     </footer>
   );
-} 
+}
