@@ -13,7 +13,7 @@ export default function AboutTedxUokPage() {
           <h1 className="text-6xl md:text-7xl font-bold mb-8">
             <span className="text-foreground">TED</span>
             <sup className="text-primary text-[0.8em]">x</sup>
-            <span className="text-foreground ml-4">UOK</span>
+            <span className="text-foreground ml-4">UoK</span>
           </h1>
           <p className="text-2xl text-muted-foreground max-w-4xl mx-auto">
             Spreading ideas worth sharing at the University of Kelaniya.
