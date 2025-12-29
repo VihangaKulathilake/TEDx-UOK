@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useSEO } from "../../hooks/useSEO";
+import { seoConfig } from "../../config/seo";
 
 // Supabase client
 import { supabase } from "../../lib/supabase";
@@ -65,17 +66,7 @@ const HomePage = () => {
   }));
 
   // SEO: Set page title and meta description
-  useEffect(() => {
-    document.title = "TEDxUOK - Ideas Worth Spreading | University of Kelaniya";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "An independently organized TEDx event at the University of Kelaniya. Join us for inspiring talks, innovative ideas, and community impact."
-      );
-    }
-  }, []);
+  useSEO(seoConfig.home);
 
   return (
     <div className="min-h-screen bg-background relative -top-16">

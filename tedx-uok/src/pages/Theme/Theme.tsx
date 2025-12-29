@@ -50,7 +50,15 @@ const speakerAlignments = [
   },
 ];
 
+import { useSEO } from "../../hooks/useSEO";
+import { seoConfig } from "../../config/seo";
+
 const Theme = () => {
+  useSEO({
+    title: "Theme - Breaking Boundaries | TEDxUOK",
+    description:
+      "Explore the theme of TEDxUOK: Breaking Boundaries. Discover how we challenge conventional thinking and push for innovation and resilience.",
+  });
   return (
     <main className="min-h-screen bg-background relative top-[-50px]">
       {/* Hero Section - Theme Title */}
