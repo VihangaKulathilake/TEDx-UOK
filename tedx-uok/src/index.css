@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 /* -------------------------------------------------------------------------- */
 /*                                    FONTS                                   */
@@ -134,7 +135,8 @@
     @apply bg-background text-foreground antialiased;
     background-color: black;
     /* Hard fallback */
-    font-family: "HelveticaNeue", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "HelveticaNeue", system-ui, Avenir, Helvetica, Arial,
+      sans-serif;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0;
@@ -192,7 +194,6 @@
 /* -------------------------------------------------------------------------- */
 
 @layer components {
-
   /* Button Variants */
   .btn {
     display: inline-flex;
@@ -246,18 +247,6 @@
 /*                                UTILITIES                                   */
 /* -------------------------------------------------------------------------- */
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-    .animation-delay-500 {
-      animation-delay: 500ms;
-    }
-  }
-}
-
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -281,7 +270,6 @@
 }
 
 @keyframes countdown-pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -317,8 +305,7 @@
     animation-delay: 400ms;
   }
 
-    .animation-delay-500 {
-      animation-delay: 500ms;
-    }
+  .animation-delay-500 {
+    animation-delay: 500ms;
   }
 }
