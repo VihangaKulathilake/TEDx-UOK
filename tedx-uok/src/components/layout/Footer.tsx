@@ -10,6 +10,7 @@ const footerLinks = {
     { name: "Team", href: "/team" },
     { name: "Press & Media", href: "/media" },
     { name: "Volunteering", href: "/volunteer" },
+    { name: "Community", href: "/community/register" },
   ],
   about: [
     { name: "About TED", href: "/about#ted" },
@@ -34,7 +35,6 @@ const socials = [
   { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com", label: "X (Twitter)" },
-
 ];
 
 export default function Footer() {

@@ -297,6 +297,15 @@ function AnimatedRoutes() {
         }
       />
 
+      <Route
+        path="/community/register"
+        element={
+          <div key={location.pathname} className="page-transition">
+            <CommunityRegistrationPage />
+          </div>
+        }
+      />
+
       {/* 404 */}
       <Route
         path="*"
