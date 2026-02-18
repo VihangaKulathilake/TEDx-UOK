@@ -115,6 +115,10 @@ export const RegistrationPage: React.FC = () => {
       newErrors.phone = "Please enter a valid phone number";
     }
 
+    
+
+    
+
     // Validate address
     if (!formData.address.trim()) {
       newErrors.address = "Address is required";
